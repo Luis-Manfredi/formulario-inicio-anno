@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario Inicio de Año</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    * {
+        color: white;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    h6 {
+        font-weight: 400;
+    }
+    hr {
+        color: #009A7E;
+    }
+    .body-flex {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        background-color: #252525;
+    }
+    .container-background {
+        background-color: #252525;
+        height: 100%;
+    }
+    .container-background-image {
+        background-color: #009A7E;
+        background-image: linear-gradient(45deg, #009a7e85, #009a7e85), url(assets/images/teamwork.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .container-background-image img {
+        height: 10rem;
+        width: auto;
+    }
+    .form-padding {
+        padding: 0 1.5rem;
+    }
+    .form-custom-height {
+        height: 68vh;
+    }
+    .button-end {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .button-selector-rounded {
+        border-radius: 50%;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .carousel-indicators [data-bs-target] {
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .carousel-indicators .active {
+        background-color: #009A7E;
+    }
+    .form-control {
+        color: white;
+        background-color: #3A3A3A;
+        outline: #009A7E;
+        border-color: #009A7E;
+        height: 50px;
+        border-radius: 50px;
+        box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.2);
+    }
+    .form-select {
+        background-color: #3A3A3A;
+        outline: #009A7E;
+        border-color: #009A7E;
+        border-radius: 50px;
+        height: 50px;
+        color: #009A7E;
+        box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.2);
+    }
+    .form-control::placeholder {
+        color: #009A7E;
+        opacity: 1;
+    }
+    .submit-button-style {
+        margin-top: 1rem;
+        background-color: #009A7E;
+        color: #252525;
+        font-weight: bold;
+        border-radius: 50px;
+        width: 120px;
+        height: 45px;
+        box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.2);
+        justify-content: center;
+        align-items: center;
+    }
+    .submit-button-style:hover {
+        background-color: white;
+        color: #252525;
+    }
+    .channels-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .material-icons {
+      color: #252525;
+    }
+    .custom-modal {
+      display: none; 
+      position: fixed; 
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+    }
+    .custom-modal-content {
+      background-image: linear-gradient(45deg, rgba(16,16,16,0.5), rgba(48,48,48,0.5));
+      backdrop-filter: blur(8px);
+      margin: auto;
+      padding: 20px;
+      width: 50%;
+      border-radius: 10px;
+    }
+    #customClose {
+      margin-top: -7px;
+      border: none;
+      background-color: rgba(0,0,0,0);
+      font-size: 35px;
+    }
+    .modal-title {
+      color: #009A7E;
+      font-weight: 600;
+    }
+    .modal-body {
+      margin-top: 1.5rem;
+    }
+    @media screen and (max-width: 500px) {
+        html {
+            height: auto;
+        }
+        .body-flex {
+            flex-direction: column;
+            height: 110%;
+        }
+        .container-background {
+            height: 80%;
+        }
+        .container-background-image {
+            border-radius: 0 0 20px 20px;
+            height: 150px;
+        }
+        .container-background-image img {
+            height: 4rem;
+            width: auto;
+        }
+        .form-custom-height {
+            height: 60vh;
+        }
+        .custom-modal-content {
+          width: 85%;
+        }
+    }
+    @media screen and (max-width: 361px) {
+        .container-background-image img {
+            height: 4rem;
+            width: auto;
+        }
+        .form-custom-height {
+            height: 580px;
+        }
+        .custom-modal-content {
+          width: 85%;
+        }
+    }
+  </style>
+  <body class="body-flex">
+    <!-- Image with logo -->
+    <div class="container-fluid container-background-image">
+        <!-- <h1>Logo and image</h1> -->
+        <img src="/assets/images/logo-bwm-white.png" alt="logo-bestway">
+    </div>
+    <!-- Content -->
+    <div class="container-fluid container-background px-4 py-4">
+        <h1>Año Nuevo, Ideas Nuevas 2023</h1>
+        <h6>Este nuevo año viene cargado de metas que queremos cumplir junto a ti. Pero antes de planificar, queremos conocer...</h6>
+        
+        <hr>
+
+        <div id="carouselExampleIndicators" class="carousel slide form-custom-height">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item form-padding active">
+                <form>
+                    <div class="mb-3">
+                      <label for="clientName" class="form-label">Cliente</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="clientName" 
+                        aria-describedby="clientNameHelp"
+                        placeholder="Escribir respuesta">
+                    </div>
+                    <div class="mb-3">
+                        <label for="expectationsValue" class="form-label">¿Cómo evalúas tu cierre de año comercial 2022?</label>
+                        <select class="form-select" aria-label="Default select example" id="expectationsValue">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="Cumplió mis expectativas">Cumplió mis expectativas</option>
+                            <option value="Fue bastante impredecible">Fue bastante impredecible</option>
+                            <option value="No llegué a mis metas">No llegué a mis metas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="brandMision" class="form-label">¿Cuál dirías que es la misión de TU MARCA en este 2023?</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="brandMision"
+                        aria-describedby="brandMisionHelp"
+                        placeholder="Escribir respuesta">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="brandPublic" class="form-label">¿Qué necesidad llenará TU MARCA para el público en el 2023?</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="brandPublic" 
+                            aria-describedby="brandPublicHelp"
+                            placeholder="Escribir respuesta">
+                      </div>
+                </form>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item form-padding">
+                <form>
+                    <div class="mb-3">
+                        <label for="channelsValue" class="form-label">¿Se encuentran actualizados tus canales de búsqueda y contacto?</label>
+                        <select class="form-select" aria-label="Default select example" id="channelsValue">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="clientsFeedback" class="form-label">¿Qué feedback recibes actualmente de tus clientes?</label>
+                      <select class="form-select" aria-label="Default select example" id="clientsFeedback">
+                        <option selected>Seleccionar respuesta</option>
+                        <option value="Excelentes comentarios">Excelentes comentarios</option>
+                        <option value="Críticas constructivas">Críticas constructivas</option>
+                        <option value="Algunas sugerencias o reclamos">Algunas sugerencias o reclamos</option>
+                        <option value="No recibo feedback">No recibo feedback</option>
+                    </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="bestSellerProduct" class="form-label">¿Cuál ha sido tu producto más vendido hasta ahora?</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="bestSellerProduct"
+                        placeholder="Escribir respuesta">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="marketNeeds" class="form-label">¿Qué productos quieren mejorar o impulsar?</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="marketNeeds" 
+                            aria-describedby="marketNeedsHelp"
+                            placeholder="Escribir respuesta">
+                    </div>
+                </form>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item form-padding">
+                <form>
+                    <div class="mb-3">
+                        <label for="rivalriesStatus" class="form-label">¿Viste un incremento de la competencia en este cierre de año?</label>
+                        <select class="form-select" aria-label="Default select example" id="rivalriesStatus">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="Alto">Alto</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Bajo">Bajo</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientManagement" class="form-label">¿Cómo evalúas a tu personal de atención?</label>
+                        <select class="form-select" aria-label="Default select example" id="clientManagement">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="Excelente">Excelente</option>
+                            <option value="Bueno">Bueno</option>
+                            <option value="Debe mejorar">Debe mejorar</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="deliveryPerformance" class="form-label">¿Cómo calificas tu servicio Delivery?</label>
+                        <select class="form-select" aria-label="Default select example" id="deliveryPerformance">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="Excelente">Excelente</option>
+                            <option value="Bueno">Bueno</option>
+                            <option value="Debe mejorar">Debe mejorar</option>
+                            <option value="No tengo disponible actualmente">No tengo disponible actualmente</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="newsAboutBrand" class="form-label">¿Qué novedades veremos en TU MARCA este primer trimestre del 2023?</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="newsAboutBrand" 
+                            aria-describedby="newsAboutBrandHelp"
+                            placeholder="Escribir respuesta">
+                      </div>
+                </form>
+              </div>
+            
+              <!-- Slide 4 -->
+              <div class="carousel-item form-padding">
+                <form>
+                    <div class="mb-3">
+                        <label for="monthlyBudget" class="form-label">¿Qué presupuesto mensual deseas asignar para campañas ADS?</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="monthlyBudget" 
+                            aria-describedby="monthlyBudgetHelp"
+                            placeholder="Escribir respuesta">
+                    </div>
+                    <div class="mb-3">
+                        <label for="saintValentineStatus" class="form-label">¿Estás listo para la primera gran fecha comercial del año "San Valentín" ?</label>
+                        <select class="form-select" aria-label="Default select example" id="saintValentineStatus">
+                            <option selected>Seleccionar respuesta</option>
+                            <option value="1">Ya definido el plan</option>
+                            <option value="2">Estoy planificando</option>
+                            <option value="3">No, me gustaría obtener propuestas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="bestwayFeedback" class="form-label">¿Qué Feedback le das al Trabajo y Atención de BestWay Marketing?</label>
+                      <input 
+                          type="text" 
+                          class="form-control" 
+                          id="bestwayFeedback" 
+                          aria-describedby="bestwayFeedbackHelp"
+                          placeholder="Escribir respuesta">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="areYouReady" class="form-label">¿Estás listo para iniciar un año comercial exitoso?</label>
+                        <select class="form-select" aria-label="Default select example" id="areYouReady">
+                          <option selected>Seleccionar respuesta</option>
+                          <option value="1">Super listo</option>
+                          <option value="2">Faltan detalles por definir</option>
+                      </select>
+                    </div>
+                </form>
+              </div>
+            </div>
+        </div>
+        <button 
+            type="submit" 
+            class="btn submit-button-style d-flex button-end"
+            onclick="sendData()"
+        >
+            Enviar
+            <span class="material-icons">
+              arrow_forward_ios
+            </span>
+        </button>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modalSuccess" class="custom-modal">
+      <div class="custom-modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bestway Marketing</h5>
+        </div>
+        <div class="modal-body">
+            <p id="modalMessage">
+              ¡El formulario ha sido enviado con éxito!
+              <br/>
+              <br/>
+              Pronto tendrá una respuesta de parte de Bestway Marketing.
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn submit-button-style" onclick="closeModal('modalSuccess')">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="modalError" class="custom-modal">
+      <div class="custom-modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bestway Marketing</h5>
+        </div>
+        <div class="modal-body">
+            <p id="modalMessage">
+              No se ha podido enviar los datos. Compruebe que todos los campos tengan la información solicitada e intente de nuevo.
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn submit-button-style" onclick="closeModal('modalError')">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get fields
+      var clientName = document.getElementById("clientName");
+      var expectationsValue = document.getElementById("expectationsValue");
+      var brandMision = document.getElementById("brandMision");
+      var brandPublic = document.getElementById("brandPublic");
+
+      var channelsValue = document.getElementById("channelsValue");
+      var clientsFeedback = document.getElementById("clientsFeedback");
+      var bestSellerProduct = document.getElementById("bestSellerProduct");
+      var marketNeeds = document.getElementById("marketNeeds");
+
+      var rivalriesStatus = document.getElementById("rivalriesStatus");
+      var clientManagement = document.getElementById("clientManagement");
+      var deliveryPerformance = document.getElementById("deliveryPerformance");
+      var newsAboutBrand = document.getElementById("newsAboutBrand");
+
+      var monthlyBudget = document.getElementById("monthlyBudget");
+      var saintValentineStatus = document.getElementById("saintValentineStatus");
+      var bestwayFeedback = document.getElementById("bestwayFeedback");
+      var areYouReady = document.getElementById("areYouReady");
+
+      // Get Modals
+      var modal = document.getElementById("modalSuccess");
+      var error = document.getElementById("modalError");
+      
+      // Pipedream Url
+      var pipedream = 'https://eonbj4sw3ads3kz.m.pipedream.net';
+
+      async function sendData () {
+        var data = {
+          "cliente": clientName.value,
+          "cierreExpectativas": expectationsValue.value,
+          "misionMarca": brandMision.value,
+          "necesidadPublico": brandPublic.value,
+          "canalesActualizados": channelsValue.value,
+          "feedbackMarca": clientsFeedback.value,
+          "productoMasVendido": bestSellerProduct.value,
+          "mejorarProducto": marketNeeds.value,
+          "competencia": rivalriesStatus.value,
+          "gestionClientes": clientManagement.value,
+          "deliveryRendimiento": deliveryPerformance.value,
+          "noticiasMarca": newsAboutBrand.value,
+          "presupuestoMensual": monthlyBudget.value,
+          "sanValentinPlan": saintValentineStatus.value,
+          "feedbackBestway": bestwayFeedback.value,
+          "estasListo": areYouReady.value,
+        }
+
+        try {
+          if (Object.values(data).includes('') 
+          || Object.values(data).includes('Seleccionar respuesta')) {
+          console.log("Error al enviar los datos")
+
+          // Open Error Modal
+          error.style.display = 'flex';
+        } else {
+            console.log(data);
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", pipedream, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(data));
+
+            // Open modal
+            modal.style.display = 'flex'; 
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      function closeModal (id) {
+        var element = document.getElementById(id);
+        element.style.display = 'none';
+      }
+ 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
